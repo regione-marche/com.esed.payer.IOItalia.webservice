@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web>
+    <context-root>IOItalia</context-root>
+    
+    <resource-ref>
+		<res-ref-name>payerDataSource</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:/payerDataSource</jndi-name>
+	</resource-ref>
+	
+	<resource-ref>
+		<res-ref-name>payerDataSourceM1</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:/payerDataSourceM1</jndi-name>
+	</resource-ref>
+	
+	<resource-ref>
+		<res-ref-name>payerDataSourceP4</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:/payerDataSourceP4</jndi-name>
+	</resource-ref>
+	
+	<resource-ref>
+		<res-ref-name>payerDataSourceP5</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:/payerDataSourceP5</jndi-name>
+	</resource-ref>
+	
+	<resource-ref>
+		<res-ref-name>payerDataSourceP6</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:/payerDataSourceP6</jndi-name>
+	</resource-ref>
+	
+	<resource-ref>
+		<res-ref-name>payerDataSourceQ3</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:/payerDataSourceQ3</jndi-name>
+	</resource-ref>
+	
+	<resource-ref>
+		<res-ref-name>payerDataSourceR0</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:/payerDataSourceR0</jndi-name>
+	</resource-ref>
+	
+	<resource-ref>
+		<res-ref-name>payerDataSourceS1</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:/payerDataSourceS1</jndi-name>
+	</resource-ref>
+	
+	<resource-ref>
+		<res-ref-name>payerDataSourceSA</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:/payerDataSourceSA</jndi-name>
+	</resource-ref>
+</jboss-web>
