@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.tools.Diagnostic;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
@@ -31,6 +32,7 @@ public class ApplicationRest extends Application {
 			if (rootPath == null || !new File(rootPath).exists()) {
 				throw new RuntimeException("File di configurazione non impostato");
 			}
+			System.out.println("File di configurazione = " + rootPath);
 			try {
 				propertiesTree = new PropertiesTree(PropertiesLoader.load(rootPath));
 			} catch (IOException | PropertiesNodeException e) {
