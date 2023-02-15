@@ -5,11 +5,12 @@
   <version>1.0</version>
   <packaging>war</packaging>
    
-    <parent>
+   <parent>
       <groupId>it.maggioli.informatica.base.pom</groupId>
       <artifactId>pagonet-base</artifactId>
-      <version>1.0</version>
-    </parent>
+      <version>1.1</version>
+      <relativePath/>
+   </parent>
 
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
