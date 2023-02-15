@@ -43,9 +43,11 @@ public class Filtro implements ContainerRequestFilter {
 		
 		if(stringhe == null || stringhe.isEmpty()) {
 			requestContext.abortWith(Response.status(Status.UNAUTHORIZED).build());
+			return;
 		}
 		if(stringhe2 == null || stringhe2.isEmpty()) {
 			requestContext.abortWith(Response.status(Status.UNAUTHORIZED).build());
+			return;
 		}
 		
 		String apiKey = stringhe.get(0);
@@ -66,7 +68,6 @@ public class Filtro implements ContainerRequestFilter {
 			} else {
 				conf = ioItaliaDao.selectConfigurazioneTail(apiKey, true);
 			}
-			conf = ioItaliaDao.selectConfigurazione(apiKey);
 //			YLM PG22XX06 INI	
 			
 			
@@ -74,11 +75,14 @@ public class Filtro implements ContainerRequestFilter {
 			e.printStackTrace();
 		}
 		
-		if(conf == null) {
+		if(conf == null || conf.getCodiceUtente() == null) {
 			requestContext.abortWith(Response.status(Status.UNAUTHORIZED).build());
-		} 
-		if(!conf.getCodiceUtente().equals(cutecute)) {
-			requestContext.abortWith(Response.status(Status.BAD_REQUEST).build());
+			return;
+		} else {
+			if(!conf.getCodiceUtente().equals(cutecute)) {
+				requestContext.abortWith(Response.status(Status.BAD_REQUEST).build());
+				return;
+			}
 		}
 		
 		IoItaliaConfUser confUser = new IoItaliaConfUser(conf);
