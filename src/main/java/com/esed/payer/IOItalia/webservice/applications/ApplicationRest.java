@@ -1,6 +1,6 @@
 package com.esed.payer.IOItalia.webservice.applications;
 
-import java.io.File;
+import java.io.File; 
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
@@ -12,6 +12,8 @@ import javax.ws.rs.core.Application;
 import com.esed.payer.IOItalia.webservice.request_filter.Filtro;
 import com.esed.payer.IOItalia.webservice.resources.Resource;
 import com.esed.payer.IOItalia.webservice.utils.PropertiesPath;
+import com.seda.commons.logger.CustomLoggerManager;
+import com.seda.commons.logger.LoggerWrapper;
 import com.seda.commons.properties.PropertiesLoader;
 import com.seda.commons.properties.tree.PropertiesNodeException;
 import com.seda.commons.properties.tree.PropertiesTree;
@@ -22,6 +24,7 @@ public class ApplicationRest extends Application {
 	
 	private static PropertiesTree propertiesTree;
 	
+	protected static LoggerWrapper logger = CustomLoggerManager.get(ApplicationRest.class);
 
 	static {
 		SystemVariable sv = new SystemVariable();
