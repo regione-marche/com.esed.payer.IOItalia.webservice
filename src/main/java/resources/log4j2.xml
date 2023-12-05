@@ -8,7 +8,7 @@
             <PatternLayout pattern="${LOG_PATTERN}"/>
         </Console>
         <RollingFile name="com-esed-payer-IOItalia-ws"
-                      fileName="../standalone/log/com-esed-payer-IOItalia-ws.log"
+                      fileName="${sys:jboss.server.log.dir}/com-esed-payer-IOItalia-ws.log"
                       filePattern="%d{yyyy-MM-dd}-com-esed-payer-IOItalia-ws.%i.log.gz"
                       ignoreExceptions="false" filePermissions="rw-rw-r--">
             <PatternLayout pattern="${LOG_PATTERN}"/>
@@ -20,7 +20,7 @@
             <ThresholdFilter level="INFO"/>
         </RollingFile>
         <RollingFile name="com-esed-payer-IOItalia-ws-error"
-                     fileName="../standalone/log/com-esed-payer-IOItalia-ws-error.log"
+                     fileName="${sys:jboss.server.log.dir}/com-esed-payer-IOItalia-ws-error.log"
                      filePattern="com-esed-payer-IOItalia-ws-error.%i.log"
                      ignoreExceptions="false" filePermissions="rw-rw-r--">
             <JsonTemplateLayout eventTemplateUri="classpath:ElasticsearchJsonEventLayoutV1.json"/>
