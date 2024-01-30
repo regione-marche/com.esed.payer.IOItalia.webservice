@@ -1,6 +1,6 @@
 /build/
 /target/*
-!target/*.war
+/target/*.war
 /home/
 /.settings/
 .classpath
@@ -8,3 +8,4 @@
 /bin/
 .log
 /Logs/
+/target/
