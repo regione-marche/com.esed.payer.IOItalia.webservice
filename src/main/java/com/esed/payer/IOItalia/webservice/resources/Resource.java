@@ -138,7 +138,7 @@ public class Resource {
 			LocalDateTime localdate = LocalDateTime.parse(mex.getContenuto().getData_scadenza(), DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"));
 			messaggio.setDataScadenzaMessaggio(java.util.Date.from(localdate.atZone(ZoneId.systemDefault()).toInstant()));
 				
-			messaggio.setImporto(mex.getContenuto().getDati_pagamento().getImporto());
+			messaggio.setImporto(mex.getContenuto().getDati_pagamento().getImporto().divide(new BigDecimal("100"), 2, BigDecimal.ROUND_HALF_UP));
 			messaggio.setAvvisoPagoPa(mex.getContenuto().getDati_pagamento().getAvviso_pagoPA());
 			messaggio.setScadenzaPagamento(mex.getContenuto().getDati_pagamento().isScadenza_pagamento()? "1":"0");
 			messaggio.setEmail(mex.getEmail());
@@ -261,7 +261,7 @@ public class Resource {
 			
 			messaggio.setCorpoMessaggio(messaggioPost.getContenuto().getCorpo_messaggio());
 			messaggio.setOggettoMessaggio(messaggioPost.getContenuto().getOggetto_messaggio());
-			messaggio.setImporto(messaggioPost.getContenuto().getDati_pagamento().getImporto());
+			messaggio.setImporto(messaggioPost.getContenuto().getDati_pagamento().getImporto().divide(new BigDecimal("100"), 2, BigDecimal.ROUND_HALF_UP));
 			messaggio.setAvvisoPagoPa(messaggioPost.getContenuto().getDati_pagamento().getAvviso_pagoPA());
 			messaggio.setScadenzaPagamento(messaggioPost.getContenuto().getDati_pagamento().isScadenza_pagamento()?"1":"0");
 			
